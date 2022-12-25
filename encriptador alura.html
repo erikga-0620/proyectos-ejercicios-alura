@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+	
+	<meta charset"UFF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>encriptador</title>
+	<img id="logo" src="compendio/Logo.png">
+	
+</head>
+
+    <body>
+		
+			
+		
+		<div id="conten" class="contenedor">	
+	
+			<input type="text" id="textoUsuario">
+			<div id="conjunto" class="contenedor"><textarea name="resuelto" id="textodecodificado" cols="25"rows="10"></textarea></div>
+			
+			
+		</div>
+		<div id="conten2" class="contenedor">
+			<br>
+			<p>¡solo se aceptan minusculas</p>
+			
+		<div id="b1" class="contenedor" style = "float: left"><button type="button"id="botondeencriptado"codificar><strong><a>encriptar</a></strong></button></div>
+		<div id="b2" class="contenedor"><button type="button"id="botondecodificar"decodificar><strong><a>desencriptar</a></strong></button></div>
+		
+		<div id="b3" class="contenedor"><button type="button"id="botoncopiado"copiar><strong><a>copiar</a></strong></button></div>
+		
+		</div> 
+		
+
+		
+	
+				
+			</body>
+			<script>
+                function encriptar(){
+	var frase=document.getElementById("textoUsuario").value.toLowerCase();
+
+	var texencrip=frase.replace(/e/img, "enter");
+	var texencrip=texencrip.replace(/i/img, "imes");
+	var texencrip=texencrip.replace(/a/img, "ai");
+	var texencrip=texencrip.replace(/o/img, "ober");
+	var texencrip=texencrip.replace(/u/img, "ufat");
+	
+	document.getElementById("textodecodificado").innerHTML =texencrip;
+    document.getElementById("botoncopiado").style.display="show";
+	document.getElementById("botoncopiado").style.display="inherit";
+	
+	
+
+}
+				function desifrar(){
+	var frase=document.getElementById("textoUsuario").value.toLowerCase();
+
+	var tex=frase.replace(/enter/img, "e");
+	var tex=tex.replace(/imes/img, "i");
+	var tex=tex.replace(/ai/img, "a");
+	var tex=tex.replace(/ober/img, "o");
+	var tex=tex.replace(/ufat/img, "u");
+	document.getElementById("textodecodificado").innerHTML =tex;
+
+
+}
+		function copiado(){
+			var bak=document.querySelector("#textodecodificado");
+			bak.select();
+			document.execCommand("copy");
+		}
+		
+	
+					var btn=document.querySelector("#botondeencriptado");
+					btn.onclick=encriptar;
+						var btn1=document.querySelector("#botondecodificar");
+						btn1.onclick=desifrar;
+							var btn2=document.querySelector("#botoncopiado");
+							btn2.onclick=copiado;
+		
+
+            </script>
+		
+	</html>
